@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KONA Ocean Club | 淡路島の高台に誕生するプライベートヴィラ</title>
+<title>KONA OCEAN CLUB | 淡路島の高台に誕生するプライベートヴィラ</title>
 <meta name="description" content="2026年4月、淡路島の高台に全棟プライベートサウナ＆ジャグジー付きヴィラが誕生。圧倒的なオーシャンビューと完全プライベート空間で、極上の非日常体験を。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ========================================
    RESET & BASE
@@ -108,11 +108,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
   color: var(--white);
-  letter-spacing: 0.15em;
-  font-weight: 400;
+  letter-spacing: 0.25em;
+  font-weight: 600;
 }
 
 .nav-links { display: flex; gap: 32px; list-style: none; }
@@ -168,7 +168,12 @@ a { text-decoration: none; color: inherit; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('images/hero-sunset.jpg') center center / cover no-repeat;
+}
+
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -703,10 +708,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
   color: rgba(255,255,255,0.7);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.25em;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
@@ -841,13 +847,17 @@ a { text-decoration: none; color: inherit; }
 
 <!-- ======== HERO ======== -->
 <section class="hero">
-  <div class="hero-bg" role="img" aria-label="淡路島のオーシャンビューテラスの夕焼け"></div>
+  <div class="hero-bg">
+    <video autoplay muted playsinline poster="images/hero-sunset.jpg" aria-label="KONA OCEAN CLUB ロゴアニメーション">
+      <source src="images/logo-animation.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-dummy-label">DUMMY</div>
   <div class="hero-content">
     <div class="hero-coming-soon">Coming Soon</div>
     <div class="hero-open-date">4月下旬グランドオープン</div>
-    <h1 class="hero-title en">KONA Ocean Club</h1>
+    <h1 class="hero-title en" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">KONA OCEAN CLUB</h1>
     <p class="hero-subtitle">空と海を独占する、高台のプライベートヴィラ</p>
     <p class="hero-tagline">淡路島・全4棟 ── サウナ＆ジャグジー完備</p>
   </div>
@@ -887,7 +897,7 @@ a { text-decoration: none; color: inherit; }
   <div class="container">
     <div class="text-center fade-in">
       <span class="section-label en">Features</span>
-      <h2 class="section-title">KONA Ocean Club の3つの魅力</h2>
+      <h2 class="section-title"><span style="font-family: 'Montserrat', sans-serif; font-weight: 600;">KONA OCEAN CLUB</span> の3つの魅力</h2>
     </div>
     <div class="features-grid">
       <div class="feature-card fade-in">
@@ -1039,13 +1049,13 @@ a { text-decoration: none; color: inherit; }
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="KONA Ocean Club の所在地"
+          title="KONA OCEAN CLUB の所在地"
         ></iframe>
       </div>
       <dl class="info-table fade-in">
         <div class="info-row">
           <dt>施設名</dt>
-          <dd>KONA Ocean Club</dd>
+          <dd style="font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: 0.15em;">KONA OCEAN CLUB</dd>
         </div>
         <div class="info-row">
           <dt>所在地</dt>
@@ -1095,7 +1105,7 @@ a { text-decoration: none; color: inherit; }
 <!-- ======== FOOTER ======== -->
 <footer class="footer">
   <div class="footer-logo en">KONA OCEAN CLUB</div>
-  <p>&copy; 2026 KONA Ocean Club / SUGOMoRI Inc. All rights reserved.</p>
+  <p>&copy; 2026 KONA OCEAN CLUB / SUGOMoRI Inc. All rights reserved.</p>
 </footer>
 
 <!-- ======== JS ======== -->
