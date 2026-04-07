@@ -419,14 +419,27 @@ a { text-decoration: none; color: inherit; }
   cursor: pointer;
 }
 
-.room-card img {
+.room-card img,
+.room-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s;
 }
 
-.room-card:hover img { transform: scale(1.05); }
+.room-card video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.room-card:hover video {
+  opacity: 1;
+}
+
+.room-card:hover img,
+.room-card:hover video { transform: scale(1.05); }
 
 .room-overlay {
   position: absolute;
@@ -850,7 +863,7 @@ a { text-decoration: none; color: inherit; }
 <!-- ======== HERO ======== -->
 <section class="hero">
   <div class="hero-bg">
-    <video autoplay muted playsinline poster="images/hero-sunset.jpg" aria-label="KONA OCEAN CLUB ロゴアニメーション">
+    <video id="heroVideo" autoplay muted playsinline poster="images/hero-sunset.jpg" aria-label="KONA OCEAN CLUB 施設紹介">
       <source src="images/logo-animation.mp4" type="video/mp4">
     </video>
   </div>
@@ -946,6 +959,7 @@ a { text-decoration: none; color: inherit; }
     <div class="rooms-grid">
       <div class="room-card fade-in dummy-photo">
         <img src="images/villa-exterior-day.jpg" alt="A棟外観" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/interior-living.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">TYPE A</div>
           <div class="room-name">A棟</div>
@@ -954,6 +968,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="room-card fade-in dummy-photo">
         <img src="images/villa-exterior-night.jpg" alt="B棟外観" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/terrace-ocean.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">TYPE B</div>
           <div class="room-name">B棟</div>
@@ -962,6 +977,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="room-card fade-in dummy-photo">
         <img src="images/koti-exterior-night.jpg" alt="C棟外観" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/interior-kitchen.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">TYPE C</div>
           <div class="room-name">C棟</div>
@@ -970,6 +986,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="room-card fade-in dummy-photo">
         <img src="images/koti-exterior-day.jpg" alt="D棟外観" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/outdoor-shower.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">TYPE D</div>
           <div class="room-name">D棟</div>
@@ -1145,6 +1162,22 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Room cards: play video on hover
+document.querySelectorAll('.room-card').forEach(card => {
+  const video = card.querySelector('video');
+  if (!video) return;
+  card.addEventListener('mouseenter', () => { video.play(); });
+  card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+});
+
+// Hero video: logo animation → villa tour loop
+const heroVideo = document.getElementById('heroVideo');
+heroVideo.addEventListener('ended', () => {
+  heroVideo.src = 'images/hero-villa-tour.mp4';
+  heroVideo.loop = true;
+  heroVideo.play();
+});
 </script>
 
 </body>
