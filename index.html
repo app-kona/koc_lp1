@@ -308,9 +308,10 @@ a { text-decoration: none; color: inherit; }
   overflow: hidden;
 }
 
-.concept-image img {
+.concept-image img,
+.concept-image video {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 3/4;
   object-fit: cover;
 }
 
@@ -863,8 +864,8 @@ a { text-decoration: none; color: inherit; }
 <!-- ======== HERO ======== -->
 <section class="hero">
   <div class="hero-bg">
-    <video id="heroVideo" autoplay muted playsinline poster="images/hero-sunset.jpg" aria-label="KONA OCEAN CLUB 施設紹介">
-      <source src="images/logo-animation.mp4" type="video/mp4">
+    <video id="heroVideo" autoplay muted loop playsinline poster="images/exterior-full.jpg" aria-label="KONA OCEAN CLUB 空撮映像">
+      <source src="images/aerial.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -883,7 +884,9 @@ a { text-decoration: none; color: inherit; }
   <div class="container">
     <div class="concept-grid">
       <div class="concept-image fade-in">
-        <img src="images/jacuzzi-ocean-wide.jpg" alt="屋上ジャグジーから望むオーシャンビュー" loading="lazy" width="800" height="600">
+        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+          <source src="images/ocean-concept.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="fade-in">
         <span class="section-label en">Concept</span>
@@ -926,7 +929,7 @@ a { text-decoration: none; color: inherit; }
       </div>
       <div class="feature-card fade-in">
         <div class="feature-image">
-          <img src="images/jacuzzi-ocean-close.jpg" alt="高台テラスからのジャグジーとオーシャンビュー" loading="lazy" width="600" height="800">
+          <img src="images/sunset-jacuzzi-ocean.jpg" alt="SUNSET棟ジャグジーとオーシャンビュー" loading="lazy" width="600" height="800">
         </div>
         <div class="feature-body">
           <div class="feature-num en">02</div>
@@ -935,8 +938,8 @@ a { text-decoration: none; color: inherit; }
         </div>
       </div>
       <div class="feature-card fade-in">
-        <div class="feature-image dummy-photo">
-          <img src="images/night-lounge.jpg" alt="プライベートテラスとラウンジ空間" loading="lazy" width="600" height="800">
+        <div class="feature-image">
+          <img src="images/ocean-terrace-wide.jpg" alt="OCEAN棟テラスからのオーシャンビュー" loading="lazy" width="600" height="800">
         </div>
         <div class="feature-body">
           <div class="feature-num en">03</div>
@@ -957,39 +960,39 @@ a { text-decoration: none; color: inherit; }
       <p class="section-desc mx-auto">全4棟3タイプのヴィラ。すべての棟にサウナ・ジャグジー・オーシャンビューテラスを備えています。</p>
     </div>
     <div class="rooms-grid">
-      <div class="room-card fade-in dummy-photo">
-        <img src="images/villa-exterior-day.jpg" alt="A棟外観" loading="lazy" width="800" height="500">
-        <video muted loop playsinline preload="none" src="images/interior-living.mp4"></video>
+      <div class="room-card fade-in">
+        <img src="images/beach-terrace-wide.jpg" alt="BEACH棟テラスとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/beach-tour.mp4"></video>
         <div class="room-overlay">
-          <div class="room-tag en">TYPE A</div>
-          <div class="room-name">A棟</div>
+          <div class="room-tag en">BEACH</div>
+          <div class="room-name">BEACH棟</div>
           <div class="room-info">定員6名 ／ サウナ・ジャグジー・テラス完備</div>
         </div>
       </div>
-      <div class="room-card fade-in dummy-photo">
-        <img src="images/villa-exterior-night.jpg" alt="B棟外観" loading="lazy" width="800" height="500">
-        <video muted loop playsinline preload="none" src="images/terrace-ocean.mp4"></video>
+      <div class="room-card fade-in">
+        <img src="images/sunset-jacuzzi-ocean.jpg" alt="SUNSET棟ジャグジーとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/sunset-tour.mp4"></video>
         <div class="room-overlay">
-          <div class="room-tag en">TYPE B</div>
-          <div class="room-name">B棟</div>
+          <div class="room-tag en">SUNSET</div>
+          <div class="room-name">SUNSET棟</div>
           <div class="room-info">定員4名 ／ サウナ・ジャグジー・テラス完備</div>
         </div>
       </div>
-      <div class="room-card fade-in dummy-photo">
-        <img src="images/koti-exterior-night.jpg" alt="C棟外観" loading="lazy" width="800" height="500">
-        <video muted loop playsinline preload="none" src="images/interior-kitchen.mp4"></video>
+      <div class="room-card fade-in">
+        <img src="images/cove-terrace-ocean.jpg" alt="COVE棟テラスとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/cove-tour.mp4"></video>
         <div class="room-overlay">
-          <div class="room-tag en">TYPE C</div>
-          <div class="room-name">C棟</div>
+          <div class="room-tag en">COVE</div>
+          <div class="room-name">COVE棟</div>
           <div class="room-info">定員4名 ／ サウナ・ジャグジー・テラス完備</div>
         </div>
       </div>
-      <div class="room-card fade-in dummy-photo">
-        <img src="images/koti-exterior-day.jpg" alt="D棟外観" loading="lazy" width="800" height="500">
-        <video muted loop playsinline preload="none" src="images/outdoor-shower.mp4"></video>
+      <div class="room-card fade-in">
+        <img src="images/ocean-terrace-pool.jpg" alt="OCEAN棟テラスとプール" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images/ocean-tour.mp4"></video>
         <div class="room-overlay">
-          <div class="room-tag en">TYPE D</div>
-          <div class="room-name">D棟</div>
+          <div class="room-tag en">OCEAN</div>
+          <div class="room-name">OCEAN棟</div>
           <div class="room-info">定員8名 ／ サウナ・ジャグジー・テラス完備</div>
         </div>
       </div>
@@ -1171,13 +1174,6 @@ document.querySelectorAll('.room-card').forEach(card => {
   card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
 });
 
-// Hero video: logo animation → villa tour loop
-const heroVideo = document.getElementById('heroVideo');
-heroVideo.addEventListener('ended', () => {
-  heroVideo.src = 'images/hero-villa-tour.mp4';
-  heroVideo.loop = true;
-  heroVideo.play();
-});
 </script>
 
 </body>
