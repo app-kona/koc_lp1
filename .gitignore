@@ -1,0 +1,7 @@
+# 写真フォルダ（元素材・変換前ファイル）
+写真/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+desktop.ini
