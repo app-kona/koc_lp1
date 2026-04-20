@@ -185,195 +185,6 @@ a { text-decoration: none; color: inherit; }
   object-fit: cover;
 }
 
-/* Accordion Slider */
-.accordion-wrapper {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-.accordion-item {
-  position: relative;
-  flex: 1;
-  height: 100%;
-  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
-  overflow: hidden;
-  cursor: pointer;
-  text-decoration: none;
-}
-.accordion-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15,28,46,0.15) 0%, rgba(15,28,46,0.55) 100%);
-  transition: background 0.6s;
-  z-index: 2;
-}
-.accordion-item:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 1px;
-  background: rgba(255,255,255,0.2);
-  z-index: 4;
-}
-.accordion-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.7s ease;
-}
-.accordion-label {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  transform-origin: center;
-  color: var(--white);
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  letter-spacing: 0.35em;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-  white-space: nowrap;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 5;
-  pointer-events: none;
-}
-
-@media (min-width: 768px) {
-  .accordion-wrapper:hover .accordion-item {
-    flex: 0.6;
-  }
-  .accordion-wrapper .accordion-item:hover {
-    flex: 3;
-  }
-  .accordion-item:hover::after {
-    background: linear-gradient(to bottom, rgba(15,28,46,0.05) 0%, rgba(15,28,46,0.35) 100%);
-  }
-  .accordion-item:hover .accordion-label {
-    top: 85%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    letter-spacing: 0.25em;
-  }
-  .accordion-item:hover img {
-    transform: scale(1.05);
-  }
-  /* ホバー時はヒーロー中央テキストを薄く */
-  .hero:has(.accordion-item:hover) .hero-content {
-    opacity: 0.15;
-    transition: opacity 0.5s;
-  }
-}
-
-@media (max-width: 767px) {
-  /* スマホ：自動切替スライドショー（Ken Burns効果付き） */
-  .accordion-wrapper {
-    position: relative;
-    flex-direction: row;
-  }
-  .accordion-item {
-    position: absolute;
-    inset: 0;
-    flex: unset;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: none;
-    animation: heroFade 20s infinite;
-  }
-  .accordion-item:not(:last-child)::before { display: none; }
-  .accordion-item:nth-child(1) { animation-delay: 0s; }
-  .accordion-item:nth-child(2) { animation-delay: 5s; }
-  .accordion-item:nth-child(3) { animation-delay: 10s; }
-  .accordion-item:nth-child(4) { animation-delay: 15s; }
-
-  /* Ken Burns: 表示中にゆっくりズーム＆パン */
-  .accordion-item img {
-    animation: kenBurns 20s infinite;
-    transform-origin: center;
-  }
-  .accordion-item:nth-child(1) img { animation-delay: 0s; }
-  .accordion-item:nth-child(2) img { animation-delay: 5s; transform-origin: top right; }
-  .accordion-item:nth-child(3) img { animation-delay: 10s; transform-origin: bottom left; }
-  .accordion-item:nth-child(4) img { animation-delay: 15s; transform-origin: top left; }
-
-  /* ラベル：スライド登場 */
-  .accordion-label {
-    transform: translate(-50%, 20px);
-    font-size: clamp(2.2rem, 9vw, 3rem);
-    letter-spacing: 0.28em;
-    opacity: 0;
-    animation: labelSlide 20s infinite;
-    bottom: 80px;
-    top: auto;
-    left: 50%;
-  }
-  .accordion-item:nth-child(1) .accordion-label { animation-delay: 0s; }
-  .accordion-item:nth-child(2) .accordion-label { animation-delay: 5s; }
-  .accordion-item:nth-child(3) .accordion-label { animation-delay: 10s; }
-  .accordion-item:nth-child(4) .accordion-label { animation-delay: 15s; }
-
-  /* インジケーター（4ドット） */
-  .hero-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
-  }
-  .hero-indicators span {
-    width: 22px;
-    height: 2px;
-    background: rgba(255,255,255,0.3);
-    overflow: hidden;
-    position: relative;
-  }
-  .hero-indicators span::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gold-light);
-    transform: translateX(-100%);
-    animation: indicatorFill 20s infinite;
-  }
-  .hero-indicators span:nth-child(1)::after { animation-delay: 0s; }
-  .hero-indicators span:nth-child(2)::after { animation-delay: 5s; }
-  .hero-indicators span:nth-child(3)::after { animation-delay: 10s; }
-  .hero-indicators span:nth-child(4)::after { animation-delay: 15s; }
-}
-
-@media (min-width: 768px) {
-  .hero-indicators { display: none; }
-}
-
-@keyframes heroFade {
-  0% { opacity: 0; }
-  3%, 22% { opacity: 1; }
-  27%, 100% { opacity: 0; }
-}
-@keyframes kenBurns {
-  0% { transform: scale(1.02); }
-  3% { transform: scale(1.02); }
-  27% { transform: scale(1.15); }
-  100% { transform: scale(1.15); }
-}
-@keyframes labelSlide {
-  0%, 2% { opacity: 0; transform: translate(-50%, 20px); }
-  8%, 20% { opacity: 1; transform: translate(-50%, 0); }
-  26%, 100% { opacity: 0; transform: translate(-50%, -20px); }
-}
-@keyframes indicatorFill {
-  0% { transform: translateX(-100%); }
-  3% { transform: translateX(-100%); }
-  25% { transform: translateX(0); }
-  27%, 100% { transform: translateX(0); opacity: 0; }
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -550,266 +361,6 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ========================================
-   VILLA SHOWCASE (スマホファースト設計)
-   ======================================== */
-.villa-showcase {
-  background: var(--navy-deep);
-  color: var(--white);
-  position: relative;
-  overflow: hidden;
-}
-
-/* ----- Hero（スマホ基準） ----- */
-.villa-hero {
-  position: relative;
-  height: 70vh;
-  min-height: 480px;
-  overflow: hidden;
-}
-.villa-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.villa-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom,
-    rgba(15,28,46,0.1) 0%,
-    rgba(15,28,46,0.25) 45%,
-    rgba(15,28,46,0.92) 100%);
-}
-.villa-hero-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 28px;
-  padding: 0 20px;
-  z-index: 2;
-}
-.villa-tag {
-  display: inline-block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.35em;
-  color: var(--gold-light);
-  margin-bottom: 10px;
-}
-.villa-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 15vw, 4.5rem);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 0.95;
-  color: var(--white);
-  margin-bottom: 18px;
-  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
-}
-.villa-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 16px;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.9);
-}
-.villa-meta span {
-  display: flex;
-  align-items: baseline;
-}
-.villa-meta strong {
-  color: var(--gold-light);
-  font-weight: 500;
-  margin-right: 6px;
-  font-size: 0.62rem;
-  letter-spacing: 0.25em;
-  font-family: 'Cormorant Garamond', serif;
-}
-.villa-meta .divider { display: none; }
-
-/* ----- Section padding ----- */
-.villa-section {
-  padding: 56px 20px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* ----- Intro Grid ----- */
-.villa-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  align-items: center;
-}
-.villa-intro-text h3 {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.45rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 1.55;
-  color: var(--white);
-  margin: 8px 0 16px;
-}
-.villa-intro-text p {
-  font-size: 0.9rem;
-  line-height: 2;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.04em;
-}
-.villa-intro-img {
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.villa-intro-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-/* ----- 横スクロールギャラリー（スマホ用） ----- */
-.villa-scroll {
-  margin: 48px -20px 0;
-  padding: 0 20px 4px;
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-.villa-scroll::-webkit-scrollbar { display: none; }
-.villa-scroll .villa-thumb {
-  position: relative;
-  flex: 0 0 78%;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  scroll-snap-align: center;
-  border-radius: 2px;
-}
-.villa-scroll .villa-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.villa-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15,28,46,0.75) 0%, transparent 55%);
-  pointer-events: none;
-}
-.villa-thumb-label {
-  position: absolute;
-  left: 16px;
-  bottom: 14px;
-  color: var(--white);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.22em;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-  z-index: 2;
-}
-
-/* ----- スワイプヒント ----- */
-.scroll-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  color: rgba(200, 149, 108, 0.7);
-}
-.scroll-hint::before,
-.scroll-hint::after {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: rgba(200, 149, 108, 0.3);
-}
-
-/* ----- Wide image ----- */
-.villa-wide-image {
-  margin: 48px -20px 0;
-  aspect-ratio: 4/3;
-  overflow: hidden;
-}
-.villa-wide-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.villa-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(200,149,108,0.4), transparent);
-  margin: 0 auto;
-  max-width: 80%;
-}
-
-/* ----- タブレット以上（769px〜） ----- */
-@media (min-width: 769px) {
-  .villa-hero {
-    height: min(90vh, 900px);
-  }
-  .villa-hero-content {
-    padding: 0 48px;
-    bottom: 48px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .villa-tag { font-size: 1rem; letter-spacing: 0.4em; }
-  .villa-name {
-    font-size: clamp(4rem, 8vw, 7rem);
-    margin-bottom: 22px;
-  }
-  .villa-meta {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    font-size: 0.95rem;
-  }
-  .villa-meta strong {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-  }
-  .villa-meta .divider { display: inline; color: rgba(255,255,255,0.3); }
-
-  .villa-section { padding: 100px 48px; }
-  .villa-intro-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-  .villa-intro-text h3 { font-size: clamp(1.6rem, 2.8vw, 2rem); }
-  .villa-intro-text p { font-size: 1rem; line-height: 2.1; }
-
-  /* 横スクロール → 3カラムグリッドに切替 */
-  .villa-scroll {
-    margin: 72px 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    overflow: visible;
-  }
-  .villa-scroll .villa-thumb {
-    flex: unset;
-    scroll-snap-align: unset;
-  }
-  .scroll-hint { display: none; }
-
-  .villa-wide-image {
-    margin: 72px 0 0;
-    aspect-ratio: 21/9;
-  }
-}
-
-/* ========================================
    FEATURES (3つの特徴)
    ======================================== */
 .features { background: var(--sand); }
@@ -875,58 +426,85 @@ a { text-decoration: none; color: inherit; }
 
 .rooms-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  margin-top: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 60px;
 }
 
 .room-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  aspect-ratio: 16/10;
   cursor: pointer;
-  display: block;
 }
 
-.room-card img {
+.room-card img,
+.room-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s;
 }
 
-.room-card:hover img { transform: scale(1.05); }
+.room-card video {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.room-card:hover video {
+  opacity: 1;
+}
+
+.room-card:hover img,
+.room-card:hover video { transform: scale(1.05); }
 
 .room-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15,28,46,0.85) 0%, rgba(15,28,46,0.15) 50%);
+  background: linear-gradient(to top, rgba(15,28,46,0.8) 0%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 16px 14px;
-  text-align: center;
+  padding: 28px;
 }
 
 .room-tag {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
   color: var(--gold-light);
-  margin-bottom: 2px;
+  margin-bottom: 6px;
 }
 
 .room-name {
   font-family: 'Noto Serif JP', serif;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   color: var(--white);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.room-info {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.05em;
+}
+
+.room-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  margin-top: 8px;
   font-weight: 500;
 }
-.room-name span { display: none; }
-
-.room-info,
-.room-price { display: none; }
+.room-price .yen {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.85rem;
+  margin-left: 2px;
+}
 
 /* ========================================
    DINING（食の体験）
@@ -1231,7 +809,7 @@ a { text-decoration: none; color: inherit; }
   .features-grid,
   .experience-grid { grid-template-columns: 1fr; gap: 24px; }
 
-  .rooms-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .rooms-grid { grid-template-columns: 1fr; }
 
   .dining-image { order: -1; }
 
@@ -1322,27 +900,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ======== HERO ======== -->
 <section class="hero">
   <div class="hero-bg">
-    <div class="accordion-wrapper" id="accordion-gallery">
-      <a href="#rooms" class="accordion-item" data-villa="BEACH">
-        <img src="images/beach-infinity-pool.jpg" alt="BEACH棟">
-        <span class="accordion-label">BEACH</span>
-      </a>
-      <a href="#rooms" class="accordion-item" data-villa="SUNSET">
-        <img src="images/sunset-jacuzzi-palm.jpg" alt="SUNSET棟">
-        <span class="accordion-label">SUNSET</span>
-      </a>
-      <a href="#rooms" class="accordion-item" data-villa="COVE">
-        <img src="images/cove-terrace-seaview.jpg" alt="COVE棟">
-        <span class="accordion-label">COVE</span>
-      </a>
-      <a href="#rooms" class="accordion-item" data-villa="OCEAN">
-        <img src="images/ocean-terrace-bbq.jpg" alt="OCEAN棟">
-        <span class="accordion-label">OCEAN</span>
-      </a>
-    </div>
-    <div class="hero-indicators" aria-hidden="true">
-      <span></span><span></span><span></span><span></span>
-    </div>
+    <video id="heroVideo" autoplay muted loop playsinline poster="images2/exterior-full.jpg" aria-label="KONA OCEAN CLUB 空撮映像">
+      <source src="images2/aerial.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -1396,7 +956,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="features-grid">
       <div class="feature-card fade-in">
         <div class="feature-image">
-          <img src="images/beach-sauna.jpg" alt="本格プライベートサウナの内部" loading="lazy" width="600" height="800">
+          <img src="images2/sauna-interior.jpg" alt="本格プライベートサウナの内部" loading="lazy" width="600" height="800">
         </div>
         <div class="feature-body">
           <div class="feature-num en">01</div>
@@ -1406,7 +966,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="feature-card fade-in">
         <div class="feature-image">
-          <img src="images/sunset-rooftop-jacuzzi.jpg" alt="屋上ジャグジーからの無限オーシャンビュー" loading="lazy" width="600" height="800">
+          <img src="images2/sunset-jacuzzi-ocean.jpg" alt="SUNSET棟ジャグジーとオーシャンビュー" loading="lazy" width="600" height="800">
         </div>
         <div class="feature-body">
           <div class="feature-num en">02</div>
@@ -1416,7 +976,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="feature-card fade-in">
         <div class="feature-image">
-          <img src="images/ocean-interior-living.jpg" alt="OCEAN棟のプライベートラウンジ" loading="lazy" width="600" height="800">
+          <img src="images2/ocean-terrace-wide.jpg" alt="OCEAN棟テラスからのオーシャンビュー" loading="lazy" width="600" height="800">
         </div>
         <div class="feature-body">
           <div class="feature-num en">03</div>
@@ -1428,357 +988,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ======== ROOMS (各棟へのナビゲーション) ======== -->
-<section class="rooms" id="rooms" style="padding: 56px 20px; background: var(--white);">
+<!-- ======== ROOMS ======== -->
+<section class="rooms section-padding" id="rooms">
   <div class="container">
-    <div class="text-center fade-in" style="margin-bottom: 8px;">
+    <div class="text-center fade-in">
       <span class="section-label en">Rooms</span>
-      <h2 class="section-title" style="margin-bottom: 0;">全4棟のプライベートヴィラ</h2>
+      <h2 class="section-title">全4棟のプライベートヴィラ</h2>
+      <p class="section-desc mx-auto">全4棟3タイプのヴィラ。すべての棟にサウナ・ジャグジー・オーシャンビューテラスを備えています。</p>
     </div>
     <div class="rooms-grid">
-      <a href="#villa-beach" class="room-card fade-in">
-        <img src="images/beach-infinity-pool.jpg" alt="BEACH棟" loading="lazy">
+      <div class="room-card fade-in">
+        <img src="images2/beach-terrace-wide.jpg" alt="BEACH棟テラスとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images2/beach-tour.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">BEACH</div>
-          <div class="room-name">BEACH棟</div>
+          <div class="room-name">BEACH棟<span style="font-size: 0.7em; margin-left: 8px; color: var(--gold-light);">（ペット可）</span></div>
+          <div class="room-info">2ベッドルーム 定員6名 ／ サウナ・ジャグジー・テラス完備</div>
+          <div class="room-price">117,700<span class="yen">円〜</span></div>
         </div>
-      </a>
-      <a href="#villa-sunset" class="room-card fade-in">
-        <img src="images/sunset-jacuzzi-palm.jpg" alt="SUNSET棟" loading="lazy">
+      </div>
+      <div class="room-card fade-in">
+        <img src="images2/sunset-jacuzzi-ocean.jpg" alt="SUNSET棟ジャグジーとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images2/sunset-tour.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">SUNSET</div>
-          <div class="room-name">SUNSET棟</div>
+          <div class="room-name">SUNSET棟<span style="font-size: 0.7em; margin-left: 8px; color: var(--gold-light);">（ペット可）</span></div>
+          <div class="room-info">1ベッドルーム 定員4名 ／ サウナ・ジャグジー・テラス完備</div>
+          <div class="room-price">97,900<span class="yen">円〜</span></div>
         </div>
-      </a>
-      <a href="#villa-cove" class="room-card fade-in">
-        <img src="images/cove-terrace-seaview.jpg" alt="COVE棟" loading="lazy">
+      </div>
+      <div class="room-card fade-in">
+        <img src="images2/cove-terrace-ocean.jpg" alt="COVE棟テラスとオーシャンビュー" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images2/cove-tour.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">COVE</div>
           <div class="room-name">COVE棟</div>
+          <div class="room-info">1ベッドルーム 定員4名 ／ サウナ・ジャグジー・テラス完備</div>
+          <div class="room-price">93,500<span class="yen">円〜</span></div>
         </div>
-      </a>
-      <a href="#villa-ocean" class="room-card fade-in">
-        <img src="images/ocean-terrace-bbq.jpg" alt="OCEAN棟" loading="lazy">
+      </div>
+      <div class="room-card fade-in">
+        <img src="images2/ocean-terrace-pool.jpg" alt="OCEAN棟テラスとプール" loading="lazy" width="800" height="500">
+        <video muted loop playsinline preload="none" src="images2/ocean-tour.mp4"></video>
         <div class="room-overlay">
           <div class="room-tag en">OCEAN</div>
           <div class="room-name">OCEAN棟</div>
+          <div class="room-info">2ベッドルーム 定員8名 ／ サウナ・ジャグジー・テラス完備</div>
+          <div class="room-price">149,600<span class="yen">円〜</span></div>
         </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ======== VILLA SHOWCASE: BEACH ======== -->
-<section class="villa-showcase" id="villa-beach">
-  <div class="villa-hero">
-    <img src="images/beach-pool-sofa.jpg" alt="BEACH棟 インフィニティプールとオーシャンビュー" loading="lazy">
-    <div class="villa-hero-content fade-in">
-      <div class="villa-tag">A — BEACH</div>
-      <h2 class="villa-name">BEACH</h2>
-      <div class="villa-meta">
-        <span><strong>BEDROOMS</strong>2ベッドルーム</span>
-        <span class="divider">|</span>
-        <span><strong>CAPACITY</strong>定員6名</span>
-        <span class="divider">|</span>
-        <span><strong>FEATURE</strong>ペット可</span>
-        <span class="divider">|</span>
-        <span><strong>PRICE</strong>117,700円〜</span>
       </div>
     </div>
   </div>
-
-  <div class="villa-section">
-    <!-- Intro: 左テキスト＋右大型写真 -->
-    <div class="villa-intro-grid">
-      <div class="villa-intro-text fade-in">
-        <div class="villa-tag">THE VILLA</div>
-        <h3>海と一体化する<br>インフィニティプール</h3>
-        <p>
-          ウッドデッキの先で、プールの水面が水平線に溶け合う。<br>
-          2ベッドルームの贅沢な空間に、本格フィンランド式サウナ、<br>
-          ジャグジー、そして広大なオーシャンビュー・テラス。<br>
-          <br>
-          海を独占する感覚を、最大6名様で。<br>
-          ペット同伴でもご宿泊いただけます。
-        </p>
-      </div>
-      <div class="villa-intro-img fade-in">
-        <img src="images/beach-terrace-jacuzzi.jpg" alt="BEACH棟 テラスのジャグジー" loading="lazy">
-      </div>
-    </div>
-
-    <!-- 横スクロール1（スマホ）／3カラム（PC） -->
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-sauna.jpg" alt="プライベートサウナ" loading="lazy">
-        <span class="villa-thumb-label">SAUNA</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-bathroom.jpg" alt="バスルーム" loading="lazy">
-        <span class="villa-thumb-label">BATHROOM</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-bedroom-seaview.jpg" alt="海を望むベッドルーム" loading="lazy">
-        <span class="villa-thumb-label">BEDROOM</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-
-    <!-- 大型横長写真 -->
-    <div class="villa-wide-image fade-in">
-      <img src="images/beach-living-seaview.jpg" alt="リビングから海へ抜ける開放感" loading="lazy">
-    </div>
-
-    <!-- 横スクロール2 -->
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-living-room.jpg" alt="リビング" loading="lazy">
-        <span class="villa-thumb-label">LOUNGE</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-bar-counter.jpg" alt="バーカウンター" loading="lazy">
-        <span class="villa-thumb-label">BAR</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/beach-terrace-bbq.jpg" alt="BBQテラス" loading="lazy">
-        <span class="villa-thumb-label">BBQ TERRACE</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-  </div>
-
-  <div class="villa-divider"></div>
-</section>
-
-<!-- ======== VILLA SHOWCASE: SUNSET ======== -->
-<section class="villa-showcase" id="villa-sunset">
-  <div class="villa-hero">
-    <img src="images/sunset-hero-jacuzzi.jpg" alt="SUNSET棟 屋上ジャグジーとオーシャンビュー" loading="lazy">
-    <div class="villa-hero-content fade-in">
-      <div class="villa-tag">B — SUNSET</div>
-      <h2 class="villa-name">SUNSET</h2>
-      <div class="villa-meta">
-        <span><strong>BEDROOMS</strong>1ベッドルーム</span>
-        <span class="divider">|</span>
-        <span><strong>CAPACITY</strong>定員4名</span>
-        <span class="divider">|</span>
-        <span><strong>FEATURE</strong>ペット可</span>
-        <span class="divider">|</span>
-        <span><strong>PRICE</strong>97,900円〜</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="villa-section">
-    <div class="villa-intro-grid">
-      <div class="villa-intro-text fade-in">
-        <div class="villa-tag">THE VILLA</div>
-        <h3>夕陽に溶ける<br>屋上ジャグジー</h3>
-        <p>
-          屋上のルーフテラスに備えた、海に向かう円形ジャグジー。<br>
-          誰にも邪魔されず、沈む陽と星空を独り占めする大人の時間。<br>
-          <br>
-          1ベッドルームに最大4名様。<br>
-          ペット同伴でお泊まりいただける特別な棟です。
-        </p>
-      </div>
-      <div class="villa-intro-img fade-in">
-        <img src="images/sunset-jacuzzi-palm.jpg" alt="SUNSET棟 ジャグジーとヤシの木" loading="lazy">
-      </div>
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-sauna.jpg" alt="プライベートサウナ" loading="lazy">
-        <span class="villa-thumb-label">SAUNA</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-rooftop-jacuzzi.jpg" alt="屋上ジャグジー" loading="lazy">
-        <span class="villa-thumb-label">ROOFTOP</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-interior-terrace.jpg" alt="室内からテラスへ" loading="lazy">
-        <span class="villa-thumb-label">LOUNGE</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-
-    <div class="villa-wide-image fade-in">
-      <img src="images/sunset-infinity-view.jpg" alt="ガラス窓から水平線へ" loading="lazy">
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-living-stairs.jpg" alt="リビング" loading="lazy">
-        <span class="villa-thumb-label">LIVING</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-bbq-terrace.jpg" alt="BBQテラス" loading="lazy">
-        <span class="villa-thumb-label">BBQ TERRACE</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/sunset-exterior-close.jpg" alt="SUNSETサイン" loading="lazy">
-        <span class="villa-thumb-label">SIGN</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-  </div>
-
-  <div class="villa-divider"></div>
-</section>
-
-<!-- ======== VILLA SHOWCASE: COVE ======== -->
-<section class="villa-showcase" id="villa-cove">
-  <div class="villa-hero">
-    <img src="images/cove-terrace-seaview.jpg" alt="COVE棟 プールデッキ" loading="lazy">
-    <div class="villa-hero-content fade-in">
-      <div class="villa-tag">C — COVE</div>
-      <h2 class="villa-name">COVE</h2>
-      <div class="villa-meta">
-        <span><strong>BEDROOMS</strong>1ベッドルーム</span>
-        <span class="divider">|</span>
-        <span><strong>CAPACITY</strong>定員4名</span>
-        <span class="divider">|</span>
-        <span><strong>FEATURE</strong>プール付</span>
-        <span class="divider">|</span>
-        <span><strong>PRICE</strong>93,500円〜</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="villa-section">
-    <div class="villa-intro-grid">
-      <div class="villa-intro-text fade-in">
-        <div class="villa-tag">THE VILLA</div>
-        <h3>入り江のような<br>静かな隠れ家</h3>
-        <p>
-          地形を活かしたプライベートプールが、まるで海と繋がる入り江。<br>
-          木の曲線が印象的なアプローチを抜けた先に、<br>
-          1ベッドルーム×最大4名様のための静謐な空間が広がります。<br>
-          <br>
-          静けさに包まれ、時間を忘れる滞在を。
-        </p>
-      </div>
-      <div class="villa-intro-img fade-in">
-        <img src="images/cove-corridor-sea.jpg" alt="COVE棟 曲線の廊下から海へ" loading="lazy">
-      </div>
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-bathroom.jpg" alt="バスルーム" loading="lazy">
-        <span class="villa-thumb-label">BATHROOM</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-corridor-entry.jpg" alt="エントランス廊下" loading="lazy">
-        <span class="villa-thumb-label">ENTRANCE</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-terrace.jpg" alt="テラス" loading="lazy">
-        <span class="villa-thumb-label">TERRACE</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-
-    <div class="villa-wide-image fade-in">
-      <img src="images/cove-terrace-seaview.jpg" alt="プールとデッキ" loading="lazy">
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-exterior-sign.jpg" alt="COVE棟外観" loading="lazy">
-        <span class="villa-thumb-label">FACADE</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-exterior-bbq.jpg" alt="外観とBBQ" loading="lazy">
-        <span class="villa-thumb-label">BBQ</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/cove-terrace-seaview.jpg" alt="プール" loading="lazy">
-        <span class="villa-thumb-label">POOL</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-  </div>
-
-  <div class="villa-divider"></div>
-</section>
-
-<!-- ======== VILLA SHOWCASE: OCEAN ======== -->
-<section class="villa-showcase" id="villa-ocean">
-  <div class="villa-hero">
-    <img src="images/ocean-pool-wide.jpg" alt="OCEAN棟 プールとオーシャンビュー" loading="lazy">
-    <div class="villa-hero-content fade-in">
-      <div class="villa-tag">D — OCEAN</div>
-      <h2 class="villa-name">OCEAN</h2>
-      <div class="villa-meta">
-        <span><strong>BEDROOMS</strong>2ベッドルーム</span>
-        <span class="divider">|</span>
-        <span><strong>CAPACITY</strong>定員8名</span>
-        <span class="divider">|</span>
-        <span><strong>FEATURE</strong>最大棟</span>
-        <span class="divider">|</span>
-        <span><strong>PRICE</strong>149,600円〜</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="villa-section">
-    <div class="villa-intro-grid">
-      <div class="villa-intro-text fade-in">
-        <div class="villa-tag">THE VILLA</div>
-        <h3>海に浮かぶ、<br>最大クラスの一棟。</h3>
-        <p>
-          2ベッドルームに大型リビング、BBQテラス、プライベートプール。<br>
-          3世代ファミリーや仲間たちとの集い、<br>
-          最大8名様まで気兼ねなくお過ごしいただけます。<br>
-          <br>
-          夜は間接照明に包まれる、もう一つの表情を。
-        </p>
-      </div>
-      <div class="villa-intro-img fade-in">
-        <img src="images/ocean-bar-view.jpg" alt="OCEAN棟 バーカウンターからの絶景" loading="lazy">
-      </div>
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-sauna.jpg" alt="プライベートサウナ" loading="lazy">
-        <span class="villa-thumb-label">SAUNA</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-bathroom-seaview.jpg" alt="海を望むバスルーム" loading="lazy">
-        <span class="villa-thumb-label">BATHROOM</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-bedroom-seaview.jpg" alt="海を望むベッドルーム" loading="lazy">
-        <span class="villa-thumb-label">BEDROOM</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-
-    <div class="villa-wide-image fade-in">
-      <img src="images/ocean-interior-living.jpg" alt="大型リビング" loading="lazy">
-    </div>
-
-    <div class="villa-scroll">
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-terrace-bbq.jpg" alt="BBQテラス" loading="lazy">
-        <span class="villa-thumb-label">BBQ TERRACE</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-night-interior.jpg" alt="夜の室内" loading="lazy">
-        <span class="villa-thumb-label">NIGHT</span>
-      </div>
-      <div class="villa-thumb fade-in">
-        <img src="images/ocean-bedroom.jpg" alt="ベッドルーム" loading="lazy">
-        <span class="villa-thumb-label">2ND BEDROOM</span>
-      </div>
-    </div>
-    <div class="scroll-hint">SWIPE</div>
-  </div>
-
-  <div class="villa-divider"></div>
 </section>
 
 <!-- ======== DINING ======== -->
@@ -1806,7 +1066,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="dining-image fade-in">
-        <img src="images/beach-terrace-bbq.jpg" alt="テラスでのBBQとオーシャンビュー" loading="lazy" width="800" height="600">
+        <img src="images2/kitchen.jpg" alt="充実したキッチン設備" loading="lazy" width="800" height="600">
       </div>
     </div>
   </div>
@@ -1953,21 +1213,13 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Accordion Slider: mobile tap behavior
-const accordionItems = document.querySelectorAll('.accordion-item');
-accordionItems.forEach(item => {
-  item.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) {
-      if (!item.classList.contains('active')) {
-        e.preventDefault();
-        accordionItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
-      }
-    }
-  });
-});
-
 // Room cards: play video on hover
+document.querySelectorAll('.room-card').forEach(card => {
+  const video = card.querySelector('video');
+  if (!video) return;
+  card.addEventListener('mouseenter', () => { video.play(); });
+  card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+});
 
 </script>
 
