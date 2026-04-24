@@ -568,6 +568,60 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ========================================
+   MOVIE SECTION
+   ======================================== */
+.movie {
+  background: var(--navy-deep);
+  color: var(--white);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+.movie .section-label {
+  color: var(--gold);
+  margin: 0 auto 12px;
+}
+.movie .section-title {
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.movie-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  line-height: 1.9;
+}
+.movie-frame {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(200,149,108,0.2);
+  border-radius: 2px;
+}
+.movie-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.movie-caption {
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+  opacity: 0.7;
+}
+@media (min-width: 769px) {
+  .movie { padding: 120px 48px; }
+  .movie-desc { font-size: 1rem; margin-bottom: 60px; }
+}
+
+/* ========================================
    VILLA SHOWCASE (スマホファースト設計)
    ======================================== */
 .villa-showcase {
@@ -1345,6 +1399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#" class="nav-logo"><img src="images2/kona-ocean-logo.png" alt="KONA OCEAN CLUB"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#concept">CONCEPT</a></li>
+      <li><a href="#movie">MOVIE</a></li>
       <li><a href="#features">FEATURES</a></li>
       <li><a href="#rooms">ROOMS</a></li>
       <li><a href="#dining">DINING</a></li>
@@ -1422,6 +1477,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ======== MOVIE ======== -->
+<section class="movie" id="movie">
+  <div class="fade-in">
+    <span class="section-label en">Movie</span>
+    <h2 class="section-title">空と海に抱かれる、<br>KONA OCEAN CLUBの世界へ。</h2>
+    <p class="movie-desc">淡路島の高台から望む、海と空が溶け合う景色。<br>映像でご覧ください。</p>
+  </div>
+  <div class="movie-frame fade-in">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/pqkUgj46GRA?rel=0&modestbranding=1&playsinline=1&color=white"
+      title="KONA OCEAN CLUB プロモーション動画"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+  <p class="movie-caption fade-in">PROMOTION VIDEO</p>
 </section>
 
 <!-- ======== FEATURES ======== -->
