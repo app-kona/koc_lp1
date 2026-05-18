@@ -1000,6 +1000,30 @@ a { text-decoration: none; color: inherit; }
 .room-info,
 .room-price { display: none; }
 
+.room-price-tag {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.78rem;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.room-pet {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: rgba(200,149,108,0.92);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 /* ========================================
    DINING（食の体験）
    ======================================== */
@@ -1445,7 +1469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-reserve-date">7・8・9月のご宿泊 承り中</div>
     <h1 class="hero-title en" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">KONA OCEAN CLUB</h1>
     <p class="hero-subtitle">出張料理人を招く、海一望のヴィラディナー。</p>
-    <p class="hero-tagline">淡路島・全4棟 ── サウナ＆ジャグジー完備</p>
+    <p class="hero-tagline">淡路島・全4棟 ── サウナ＆ジャグジー｜ペット可ヴィラあり</p>
   </div>
   <div class="hero-scroll en">SCROLL</div>
 </section>
@@ -1550,17 +1574,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="rooms-grid">
       <a href="#villa-beach" class="room-card fade-in">
+        <div class="room-pet">🐾 ペット可</div>
         <img src="images/beach-infinity-pool.jpg" alt="BEACH棟" loading="lazy">
         <div class="room-overlay">
           <div class="room-tag en">BEACH</div>
           <div class="room-name">BEACH棟</div>
+          <div class="room-price-tag">1棟 117,700円〜</div>
         </div>
       </a>
       <a href="#villa-sunset" class="room-card fade-in">
+        <div class="room-pet">🐾 ペット可</div>
         <img src="images/sunset-jacuzzi-palm.jpg" alt="SUNSET棟" loading="lazy">
         <div class="room-overlay">
           <div class="room-tag en">SUNSET</div>
           <div class="room-name">SUNSET棟</div>
+          <div class="room-price-tag">1棟 97,900円〜</div>
         </div>
       </a>
       <a href="#villa-cove" class="room-card fade-in">
@@ -1568,6 +1596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="room-overlay">
           <div class="room-tag en">COVE</div>
           <div class="room-name">COVE棟</div>
+          <div class="room-price-tag">1棟 93,500円〜</div>
         </div>
       </a>
       <a href="#villa-ocean" class="room-card fade-in">
@@ -1575,6 +1604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="room-overlay">
           <div class="room-tag en">OCEAN</div>
           <div class="room-name">OCEAN棟</div>
+          <div class="room-price-tag">1棟 149,600円〜</div>
         </div>
       </a>
     </div>
@@ -1611,8 +1641,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           2ベッドルームの贅沢な空間に、本格フィンランド式サウナ、<br>
           ジャグジー、そして広大なオーシャンビュー・テラス。<br>
           <br>
-          海を独占する感覚を、最大6名様で。<br>
-          ペット同伴でもご宿泊いただけます。
+          海を独占する感覚を、最大6名様で。
+        </p>
+        <p style="margin-top: 20px; padding: 16px 20px; background: rgba(200,149,108,0.10); border-left: 3px solid var(--gold);">
+          <strong style="color: var(--gold-light); font-weight: 600;">🐾 ペットと一緒に泊まれる棟</strong><br>
+          大切なご家族の一員も、もちろんご一緒に。<br>
+          広いテラスとプールサイドで、愛犬と過ごす特別な休日を。<br>
+          <span style="font-size: 0.82em; opacity: 0.85;">※ペット同伴の条件・頭数等はお気軽にお問合せください。</span>
         </p>
       </div>
       <div class="villa-intro-img fade-in">
@@ -1691,8 +1726,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           屋上のルーフテラスに備えた、海に向かう円形ジャグジー。<br>
           誰にも邪魔されず、沈む陽と星空を独り占めする大人の時間。<br>
           <br>
-          1ベッドルームに最大4名様。<br>
-          ペット同伴でお泊まりいただける特別な棟です。
+          1ベッドルームに最大4名様。
+        </p>
+        <p style="margin-top: 20px; padding: 16px 20px; background: rgba(200,149,108,0.10); border-left: 3px solid var(--gold);">
+          <strong style="color: var(--gold-light); font-weight: 600;">🐾 ペットと一緒に泊まれる棟</strong><br>
+          愛犬と一緒に過ごせる、数少ない特別な一棟。<br>
+          夕陽を望むテラスで、ペットとともにくつろぐ贅沢な時間を。<br>
+          <span style="font-size: 0.82em; opacity: 0.85;">※ペット同伴の条件・頭数等はお気軽にお問合せください。</span>
         </p>
       </div>
       <div class="villa-intro-img fade-in">
