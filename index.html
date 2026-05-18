@@ -1411,6 +1411,43 @@ a { text-decoration: none; color: inherit; }
   .feature-card:hover .feature-image img,
   .room-card:hover img { transform: none; }
 }
+
+.monitor-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+  color: var(--navy-deep);
+  padding: 14px 24px;
+  text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.04em;
+  flex-wrap: wrap;
+  transition: filter 0.3s;
+}
+.monitor-bar:hover { filter: brightness(1.06); }
+.monitor-bar-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--navy-deep);
+  color: var(--gold-light);
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.monitor-bar-main { font-size: clamp(0.9rem, 2.2vw, 1.05rem); font-weight: 600; }
+.monitor-bar-main strong { font-size: 1.15em; font-weight: 800; }
+.monitor-bar-cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--navy-deep);
+  padding-bottom: 1px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .monitor-bar { gap: 8px; padding: 12px 16px; }
+}
 </style>
 </head>
 <body>
@@ -1466,13 +1503,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-open-date">2026年春オープン ｜ 夏の予約受付中</div>
-    <div class="hero-reserve-date">7・8・9月のご宿泊 承り中</div>
     <h1 class="hero-title en" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">KONA OCEAN CLUB</h1>
     <p class="hero-subtitle">出張料理人を招く、海一望のヴィラディナー。</p>
     <p class="hero-tagline">淡路島・全4棟 ── サウナ＆ジャグジー｜ペット可ヴィラあり</p>
   </div>
   <div class="hero-scroll en">SCROLL</div>
 </section>
+
+<!-- ======== モニター告知帯 ======== -->
+<a href="#monitor" class="monitor-bar">
+  <span class="monitor-bar-tag">🎁 オープン記念</span>
+  <span class="monitor-bar-main">毎月1組限定 ／ 宿泊料金 <strong>50%OFF</strong> モニター募集中</span>
+  <span class="monitor-bar-cta">詳しく見る ▶</span>
+</a>
 
 <!-- ======== CONCEPT ======== -->
 <section class="concept section-padding" id="concept">
@@ -2088,6 +2131,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <dd>株式会社SUGOMoRI</dd>
         </div>
       </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ======== MONITOR（オープン記念モニター募集） ======== -->
+<section class="monitor section-padding" id="monitor" style="background: var(--navy-deep); color: var(--white);">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label en" style="color: var(--gold-light);">Monitor</span>
+      <h2 class="section-title" style="color: var(--white);">オープン記念｜モニター宿泊募集</h2>
+      <p class="section-desc" style="color: rgba(255,255,255,0.7); margin: 0 auto;">
+        オープンしたばかりのKONA OCEAN CLUBを、特別価格でいち早く。<br>
+        滞在の感動をSNS・口コミでシェアいただける方を、毎月1組限定で募集します。
+      </p>
+    </div>
+
+    <div class="fade-in" style="max-width: 760px; margin: 36px auto; text-align:center; padding: 28px 24px; background: rgba(200,149,108,0.12); border: 1px solid rgba(200,149,108,0.4);">
+      <p style="font-size:0.8rem; letter-spacing:0.15em; color: var(--gold-light); margin-bottom:8px;">特典</p>
+      <p style="font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight:700; color: var(--gold-light); letter-spacing:0.02em;">宿泊料金 50%OFF</p>
+      <p style="font-size:0.85rem; color: rgba(255,255,255,0.75); margin-top:10px;">毎月1組限定 ／ 全4棟（BEACH・SUNSET・COVE・OCEAN）対象</p>
+    </div>
+
+    <div class="fade-in" style="max-width: 760px; margin: 0 auto;">
+      <p style="font-size:0.8rem; letter-spacing:0.12em; color: var(--gold-light); margin-bottom:14px;">参加条件</p>
+      <ul class="monitor-cond" style="list-style:none; display:flex; flex-direction:column; gap:12px; font-size:0.9rem; color: rgba(255,255,255,0.85); line-height:1.8;">
+        <li>① ご家族・グループでのご利用（人数は各棟の定員に準じます）</li>
+        <li>② 滞在の写真・動画を Instagram／TikTok に <strong style="color:var(--gold-light); font-weight:600;">2投稿以上</strong>（指定ハッシュタグ付き）</li>
+        <li>③ Googleマップ または 予約サイト に口コミを <strong style="color:var(--gold-light); font-weight:600;">1件</strong>投稿</li>
+        <li>④ 滞在写真・動画の二次利用にご同意（顔出しは任意）</li>
+        <li>⑤ 滞在後の簡単なアンケートにご回答</li>
+        <li>⑥ 規約を守り、良識ある投稿を行っていただける方</li>
+      </ul>
+    </div>
+
+    <div class="chef-steps fade-in" style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:40px auto; max-width:900px;">
+      <div style="background:rgba(255,255,255,0.06); padding:24px 20px; border-top:2px solid var(--gold);">
+        <p class="en" style="color:var(--gold-light); font-size:0.8rem; letter-spacing:0.15em; margin-bottom:10px;">STEP 1</p>
+        <h3 style="font-size:1rem; margin-bottom:8px; color:var(--white);">メールで応募</h3>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.9;">下のボタンから必要事項を記入してご応募ください。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); padding:24px 20px; border-top:2px solid var(--gold);">
+        <p class="en" style="color:var(--gold-light); font-size:0.8rem; letter-spacing:0.15em; margin-bottom:10px;">STEP 2</p>
+        <h3 style="font-size:1rem; margin-bottom:8px; color:var(--white);">抽選・当選通知</h3>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.9;">毎月末締切。翌月初に当選者の方へメールでご連絡します。</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.06); padding:24px 20px; border-top:2px solid var(--gold);">
+        <p class="en" style="color:var(--gold-light); font-size:0.8rem; letter-spacing:0.15em; margin-bottom:10px;">STEP 3</p>
+        <h3 style="font-size:1rem; margin-bottom:8px; color:var(--white);">ご宿泊・シェア</h3>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); line-height:1.9;">特別価格でご滞在後、SNS・口コミ・アンケートにご協力ください。</p>
+      </div>
+    </div>
+
+    <div class="text-center fade-in">
+      <a class="btn btn-gold" href="mailto:sugomori.awaji@gmail.com?subject=%E3%80%90KONA%20OCEAN%20CLUB%E3%80%91%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%20%E5%BF%9C%E5%8B%9F&body=KONA%20OCEAN%20CLUB%20%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E6%A7%98%0A%0A%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E8%A8%98%E5%BF%B5%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%E4%B8%8B%E8%A8%98%E3%82%92%E3%81%94%E7%A2%BA%E8%AA%8D%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E2%97%86%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E2%97%86%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0A%E2%97%86%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E2%97%86%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%A3%9F%EF%BC%88BEACH%EF%BC%8FSUNSET%EF%BC%8FCOVE%EF%BC%8FOCEAN%EF%BC%89%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E5%AE%BF%E6%B3%8A%E6%97%A5%EF%BC%88%E7%AC%AC1%E3%80%9C%E7%AC%AC3%E5%B8%8C%E6%9C%9B%EF%BC%89%EF%BC%9A%0A%E2%97%86%E3%81%94%E5%88%A9%E7%94%A8%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E2%97%86SNS%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%EF%BC%88Instagram%EF%BC%8FTikTok%EF%BC%89%EF%BC%9A%0A%0A%E2%97%86%E5%8F%82%E5%8A%A0%E6%9D%A1%E4%BB%B6%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%88%E5%90%8C%E6%84%8F%E3%81%AE%E5%A0%B4%E5%90%88%E3%81%AF%20%E2%96%A1%20%E3%82%92%20%E2%96%A0%20%E3%81%AB%EF%BC%89%0A%E2%96%A1%20Instagram%EF%BC%8FTikTok%20%E3%81%AB%E6%BB%9E%E5%9C%A8%E3%81%AE%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%82%922%E6%8A%95%E7%A8%BF%E4%BB%A5%E4%B8%8A%EF%BC%88%E6%8C%87%E5%AE%9A%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%B0%E4%BB%98%E3%81%8D%EF%BC%89%0A%E2%96%A1%20Google%E3%83%9E%E3%83%83%E3%83%97%E3%81%BE%E3%81%9F%E3%81%AF%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E5%8F%A3%E3%82%B3%E3%83%9F%E3%82%921%E4%BB%B6%E6%8A%95%E7%A8%BF%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%81%AE%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8%E3%81%AB%E5%90%8C%E6%84%8F%EF%BC%88%E9%A1%94%E5%87%BA%E3%81%97%E3%81%AF%E4%BB%BB%E6%84%8F%EF%BC%89%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%BE%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%81%AB%E5%9B%9E%E7%AD%94%0A%E2%96%A1%20%E8%A6%8F%E7%B4%84%E3%82%92%E5%AE%88%E3%82%8A%E3%80%81%E8%89%AF%E8%AD%98%E3%81%82%E3%82%8B%E6%8A%95%E7%A8%BF%E3%82%92%E8%A1%8C%E3%81%86%0A%0A%E3%81%A9%E3%81%86%E3%81%9E%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">モニター宿泊に応募する</a>
+      <p style="font-size:0.78rem; color:rgba(255,255,255,0.6); line-height:1.9; max-width:620px; margin:20px auto 0;">
+        ※当選制（毎月1組）。応募多数の場合は抽選となります。通常料金は時期により変動するため割引額も変動します。指定ハッシュタグ等の詳細は当選時にご案内します。
+      </p>
     </div>
   </div>
 </section>
