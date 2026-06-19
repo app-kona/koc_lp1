@@ -2330,8 +2330,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     btn.classList.remove('reserve-pending');
     btn.removeAttribute('aria-disabled');
     btn.setAttribute('href', url);
-    btn.setAttribute('target', '_blank');
-    btn.setAttribute('rel', 'noopener');
+    // スマホ中心のため同一タブ遷移（新規タブはタブ迷子による離脱を招く）
     btn.querySelector('.reserve-label').textContent = 'ご予約はこちら';
   }
 
