@@ -1506,6 +1506,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="hero-title en" style="font-family: 'Montserrat', sans-serif; font-weight: 600;">KONA OCEAN CLUB</h1>
     <p class="hero-subtitle">出張料理人を招く、海一望のヴィラディナー。</p>
     <p class="hero-tagline">淡路島・全4棟 ── サウナ＆ジャグジー｜ペット可ヴィラあり</p>
+    <div class="hero-cta-row">
+      <a href="#rooms" class="btn btn-gold hero-cta" data-cta="scroll:hero">棟と料金を見る</a>
+      <span class="hero-price-note">全4棟 1棟貸切 ¥70,400〜（税込）</span>
+    </div>
   </div>
   <div class="hero-scroll en">SCROLL</div>
 </section>
@@ -1516,6 +1520,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="monitor-bar-main">毎月1組限定 ／ 宿泊料金 <strong>50%OFF</strong> モニター募集中</span>
   <span class="monitor-bar-cta">詳しく見る ▶</span>
 </a>
+
+<!-- ======== QUICK DECISION（上部で選ぶ・決める） ======== -->
+<section class="quick-decision" id="quick">
+  <div class="quick-inner">
+    <div class="quick-chips">
+      <span class="quick-chip">全棟サウナ＆ジャグジー</span>
+      <span class="quick-chip">高台オーシャンビュー</span>
+      <span class="quick-chip">1棟貸切</span>
+      <span class="quick-chip">ペット可ヴィラあり</span>
+      <span class="quick-chip">西海岸サンセット</span>
+    </div>
+    <p class="quick-summary">
+      淡路島・全4棟のプライベートヴィラ｜定員4〜8名<br>
+      <strong>¥70,400〜</strong>（1棟1泊・税込／時期により変動）
+    </p>
+    <div class="quick-cta-row">
+      <a href="#rooms" class="btn btn-outline" data-cta="scroll:quick_rooms">4棟を見くらべる</a>
+      <a href="#cta" class="btn btn-gold" data-cta="scroll:quick_reserve">空室・ご予約</a>
+    </div>
+  </div>
+</section>
 
 <!-- ======== CONCEPT ======== -->
 <section class="concept section-padding" id="concept">
@@ -1738,6 +1763,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="scroll-hint">SWIPE</div>
   </div>
 
+  <div class="villa-cta-row fade-in">
+    <a class="btn btn-gold" href="https://reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay" data-cta="reserve:villa_beach">BEACH棟の空室・ご予約 ›</a>
+  </div>
   <div class="villa-divider"></div>
 </section>
 
@@ -1820,6 +1848,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="scroll-hint">SWIPE</div>
   </div>
 
+  <div class="villa-cta-row fade-in">
+    <a class="btn btn-gold" href="https://reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay" data-cta="reserve:villa_sunset">SUNSET棟の空室・ご予約 ›</a>
+  </div>
   <div class="villa-divider"></div>
 </section>
 
@@ -1897,6 +1928,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="scroll-hint">SWIPE</div>
   </div>
 
+  <div class="villa-cta-row fade-in">
+    <a class="btn btn-gold" href="https://reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay" data-cta="reserve:villa_cove">COVE棟の空室・ご予約 ›</a>
+  </div>
   <div class="villa-divider"></div>
 </section>
 
@@ -1974,6 +2008,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="scroll-hint">SWIPE</div>
   </div>
 
+  <div class="villa-cta-row fade-in">
+    <a class="btn btn-gold" href="https://reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay" data-cta="reserve:villa_ocean">OCEAN棟の空室・ご予約 ›</a>
+  </div>
   <div class="villa-divider"></div>
 </section>
 
@@ -2048,7 +2085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="images/otodoke-ristorante-logo.png" alt="お届けリストランテ（出張シェフ手配サービス）" loading="lazy" style="height:76px; width:auto;">
       </a>
       <br>
-      <a class="btn btn-gold" href="https://www.otodoke-ristorante.com/member?MemberSearch%5Barea%5D=%E6%B7%A1%E8%B7%AF%E5%B8%82" target="_blank" rel="noopener">
+      <a class="btn btn-gold" data-cta="chef:otodoke" href="https://www.otodoke-ristorante.com/member?MemberSearch%5Barea%5D=%E6%B7%A1%E8%B7%AF%E5%B8%82" target="_blank" rel="noopener">
         淡路市の出張シェフを探す
       </a>
       <p style="font-size:0.78rem; color:var(--text-light); line-height:1.9; max-width:620px; margin:20px auto 0;">
@@ -2142,7 +2179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </dl>
     </div>
     <!-- キャンセルポリシー -->
-    <div class="cancel-policy fade-in" style="margin:48px auto 0; max-width:760px; background:var(--sand); border:1px solid var(--sand-dark); padding:32px 28px;">
+    <div class="cancel-policy fade-in" id="cancel" style="margin:48px auto 0; max-width:760px; background:var(--sand); border:1px solid var(--sand-dark); padding:32px 28px;">
       <h3 style="font-family:'Noto Serif JP',serif; font-size:1.1rem; letter-spacing:0.08em; color:var(--navy); margin-bottom:14px; text-align:center;">キャンセルポリシー</h3>
       <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:18px; text-align:center;">ご予約のお取り消し（キャンセル）には、宿泊料金に対して以下の割合でキャンセル料を申し受けます。</p>
       <dl style="display:grid; grid-template-columns:auto 1fr; gap:10px 24px; max-width:420px; margin:0 auto; font-size:0.9rem;">
@@ -2231,7 +2268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="text-center fade-in">
-      <a class="btn btn-gold" href="mailto:sugomori.awaji@gmail.com?subject=%E3%80%90KONA%20OCEAN%20CLUB%E3%80%91%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%20%E5%BF%9C%E5%8B%9F&body=KONA%20OCEAN%20CLUB%20%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E6%A7%98%0A%0A%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E8%A8%98%E5%BF%B5%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%E4%B8%8B%E8%A8%98%E3%82%92%E3%81%94%E7%A2%BA%E8%AA%8D%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E2%97%86%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E2%97%86%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0A%E2%97%86%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E2%97%86%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%A3%9F%EF%BC%88BEACH%EF%BC%8FSUNSET%EF%BC%8FCOVE%EF%BC%8FOCEAN%EF%BC%89%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E5%AE%BF%E6%B3%8A%E6%97%A5%EF%BC%88%E7%AC%AC1%E3%80%9C%E7%AC%AC3%E5%B8%8C%E6%9C%9B%EF%BC%89%EF%BC%9A%0A%E2%97%86%E3%81%94%E5%88%A9%E7%94%A8%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E2%97%86SNS%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%EF%BC%88Instagram%EF%BC%8FTikTok%EF%BC%89%EF%BC%9A%0A%0A%E2%97%86%E5%8F%82%E5%8A%A0%E6%9D%A1%E4%BB%B6%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%88%E5%90%8C%E6%84%8F%E3%81%AE%E5%A0%B4%E5%90%88%E3%81%AF%20%E2%96%A1%20%E3%82%92%20%E2%96%A0%20%E3%81%AB%EF%BC%89%0A%E2%96%A1%20Instagram%EF%BC%8FTikTok%20%E3%81%AB%E6%BB%9E%E5%9C%A8%E3%81%AE%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%82%922%E6%8A%95%E7%A8%BF%E4%BB%A5%E4%B8%8A%EF%BC%88%E6%8C%87%E5%AE%9A%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%B0%E4%BB%98%E3%81%8D%EF%BC%89%0A%E2%96%A1%20Google%E3%83%9E%E3%83%83%E3%83%97%E3%81%BE%E3%81%9F%E3%81%AF%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E5%8F%A3%E3%82%B3%E3%83%9F%E3%82%921%E4%BB%B6%E6%8A%95%E7%A8%BF%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%81%AE%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8%E3%81%AB%E5%90%8C%E6%84%8F%EF%BC%88%E9%A1%94%E5%87%BA%E3%81%97%E3%81%AF%E4%BB%BB%E6%84%8F%EF%BC%89%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%BE%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%81%AB%E5%9B%9E%E7%AD%94%0A%E2%96%A1%20%E8%A6%8F%E7%B4%84%E3%82%92%E5%AE%88%E3%82%8A%E3%80%81%E8%89%AF%E8%AD%98%E3%81%82%E3%82%8B%E6%8A%95%E7%A8%BF%E3%82%92%E8%A1%8C%E3%81%86%0A%0A%E3%81%A9%E3%81%86%E3%81%9E%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">モニター宿泊に応募する</a>
+      <a class="btn btn-gold" href="mailto:sugomori.awaji@gmail.com?subject=%E3%80%90KONA%20OCEAN%20CLUB%E3%80%91%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%20%E5%BF%9C%E5%8B%9F&body=KONA%20OCEAN%20CLUB%20%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E6%A7%98%0A%0A%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E8%A8%98%E5%BF%B5%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E5%AE%BF%E6%B3%8A%E3%81%AB%E5%BF%9C%E5%8B%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%E4%B8%8B%E8%A8%98%E3%82%92%E3%81%94%E7%A2%BA%E8%AA%8D%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0A%0A%E2%97%86%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E2%97%86%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0A%E2%97%86%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E2%97%86%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E3%81%AE%E6%A3%9F%EF%BC%88BEACH%EF%BC%8FSUNSET%EF%BC%8FCOVE%EF%BC%8FOCEAN%EF%BC%89%EF%BC%9A%0A%E2%97%86%E5%B8%8C%E6%9C%9B%E5%AE%BF%E6%B3%8A%E6%97%A5%EF%BC%88%E7%AC%AC1%E3%80%9C%E7%AC%AC3%E5%B8%8C%E6%9C%9B%EF%BC%89%EF%BC%9A%0A%E2%97%86%E3%81%94%E5%88%A9%E7%94%A8%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E2%97%86SNS%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%EF%BC%88Instagram%EF%BC%8FTikTok%EF%BC%89%EF%BC%9A%0A%0A%E2%97%86%E5%8F%82%E5%8A%A0%E6%9D%A1%E4%BB%B6%E3%81%AE%E7%A2%BA%E8%AA%8D%EF%BC%88%E5%90%8C%E6%84%8F%E3%81%AE%E5%A0%B4%E5%90%88%E3%81%AF%20%E2%96%A1%20%E3%82%92%20%E2%96%A0%20%E3%81%AB%EF%BC%89%0A%E2%96%A1%20Instagram%EF%BC%8FTikTok%20%E3%81%AB%E6%BB%9E%E5%9C%A8%E3%81%AE%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%82%922%E6%8A%95%E7%A8%BF%E4%BB%A5%E4%B8%8A%EF%BC%88%E6%8C%87%E5%AE%9A%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%B0%E4%BB%98%E3%81%8D%EF%BC%89%0A%E2%96%A1%20Google%E3%83%9E%E3%83%83%E3%83%97%E3%81%BE%E3%81%9F%E3%81%AF%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E5%8F%A3%E3%82%B3%E3%83%9F%E3%82%921%E4%BB%B6%E6%8A%95%E7%A8%BF%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%86%99%E7%9C%9F%E3%83%BB%E5%8B%95%E7%94%BB%E3%81%AE%E4%BA%8C%E6%AC%A1%E5%88%A9%E7%94%A8%E3%81%AB%E5%90%8C%E6%84%8F%EF%BC%88%E9%A1%94%E5%87%BA%E3%81%97%E3%81%AF%E4%BB%BB%E6%84%8F%EF%BC%89%0A%E2%96%A1%20%E6%BB%9E%E5%9C%A8%E5%BE%8C%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E3%82%A2%E3%83%B3%E3%82%B1%E3%83%BC%E3%83%88%E3%81%AB%E5%9B%9E%E7%AD%94%0A%E2%96%A1%20%E8%A6%8F%E7%B4%84%E3%82%92%E5%AE%88%E3%82%8A%E3%80%81%E8%89%AF%E8%AD%98%E3%81%82%E3%82%8B%E6%8A%95%E7%A8%BF%E3%82%92%E8%A1%8C%E3%81%86%0A%0A%E3%81%A9%E3%81%86%E3%81%9E%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82" data-cta="contact:monitor">モニター宿泊に応募する</a>
       <p style="font-size:0.78rem; color:rgba(255,255,255,0.6); line-height:1.9; max-width:620px; margin:20px auto 0;">
         ※当選制（毎月1組）。応募多数の場合は抽選となります。通常料金は時期により変動するため割引額も変動します。指定ハッシュタグ等の詳細は当選時にご案内します。
       </p>
@@ -2251,11 +2288,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="cta-buttons">
       <a id="reserveBtn" class="btn btn-gold reserve-pending" href="#" aria-disabled="true"
          data-open-at="2026-04-25T12:00:00+09:00"
+         data-cta="reserve:cta_main"
          data-url="https://reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay">
         <span class="reserve-label">4/25 12:00〜 予約受付開始</span>
       </a>
-      <a class="btn btn-outline" href="mailto:sugomori.awaji+1@gmail.com?subject=%E3%80%90KONA%20OCEAN%20CLUB%E3%80%91%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B&body=KONA%20OCEAN%20CLUB%20%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E6%A7%98%0D%0A%0D%0A%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%0D%0A%E4%B8%8B%E8%A8%98%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0D%0A%0D%0A%E2%97%86%E3%81%8A%E5%AE%A2%E6%A7%98%E6%83%85%E5%A0%B1%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0D%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0D%0A%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0D%0A%0D%0A%E2%97%86%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B%E5%86%85%E5%AE%B9%EF%BC%88%E8%A9%B2%E5%BD%93%E3%81%AB%E2%96%A1%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%EF%BC%89%0D%0A%E2%96%A1%20%E6%A3%9F%E3%83%BB%E6%96%BD%E8%A8%AD%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E8%B3%AA%E5%95%8F%0D%0A%E2%96%A1%20%E3%83%9A%E3%83%83%E3%83%88%E5%90%8C%E4%BC%B4%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E7%9B%B8%E8%AB%87%EF%BC%88BEACH%E6%A3%9F%E3%83%BBSUNSET%E6%A3%9F%EF%BC%89%0D%0A%E2%96%A1%20%E8%A8%98%E5%BF%B5%E6%97%A5%E3%83%BB%E3%81%8A%E7%A5%9D%E3%81%84%E3%81%AE%E6%BC%94%E5%87%BA%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%88%A9%E7%94%A8%E3%83%BB%E8%A4%87%E6%95%B0%E6%A3%9F%E5%90%8C%E6%99%82%E4%BA%88%E7%B4%84%E3%81%AE%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E6%B3%95%E4%BA%BA%E3%83%BB%E5%9B%A3%E4%BD%93%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E3%81%9D%E3%81%AE%E4%BB%96%0D%0A%0D%0A%E2%97%86%E3%81%94%E8%B3%AA%E5%95%8F%E3%83%BB%E3%81%94%E8%A6%81%E6%9C%9B%E3%81%AE%E8%A9%B3%E7%B4%B0%0D%0A%0D%0A%0D%0A%E2%80%BB%E9%80%9A%E5%B8%B8%E3%81%AE%E3%81%94%E4%BA%88%E7%B4%84%E3%81%AF%E5%85%AC%E5%BC%8F%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%94%E5%88%A9%E7%94%A8%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0Ahttps%3A//reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay%0D%0A%0D%0A%E3%81%A9%E3%81%86%E3%81%9E%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">メールで事前お問合せ</a>
+      <a class="btn btn-outline" data-cta="contact:cta" href="mailto:sugomori.awaji+1@gmail.com?subject=%E3%80%90KONA%20OCEAN%20CLUB%E3%80%91%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B&body=KONA%20OCEAN%20CLUB%20%E3%81%94%E6%8B%85%E5%BD%93%E8%80%85%E6%A7%98%0D%0A%0D%0A%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%0D%0A%E4%B8%8B%E8%A8%98%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0D%0A%0D%0A%E2%97%86%E3%81%8A%E5%AE%A2%E6%A7%98%E6%83%85%E5%A0%B1%0D%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E3%81%B5%E3%82%8A%E3%81%8C%E3%81%AA%EF%BC%9A%0D%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0D%0A%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%EF%BC%9A%0D%0A%0D%0A%E2%97%86%E3%81%8A%E5%95%8F%E5%90%88%E3%81%9B%E5%86%85%E5%AE%B9%EF%BC%88%E8%A9%B2%E5%BD%93%E3%81%AB%E2%96%A1%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%EF%BC%89%0D%0A%E2%96%A1%20%E6%A3%9F%E3%83%BB%E6%96%BD%E8%A8%AD%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E8%B3%AA%E5%95%8F%0D%0A%E2%96%A1%20%E3%83%9A%E3%83%83%E3%83%88%E5%90%8C%E4%BC%B4%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E7%9B%B8%E8%AB%87%EF%BC%88BEACH%E6%A3%9F%E3%83%BBSUNSET%E6%A3%9F%EF%BC%89%0D%0A%E2%96%A1%20%E8%A8%98%E5%BF%B5%E6%97%A5%E3%83%BB%E3%81%8A%E7%A5%9D%E3%81%84%E3%81%AE%E6%BC%94%E5%87%BA%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%88%A9%E7%94%A8%E3%83%BB%E8%A4%87%E6%95%B0%E6%A3%9F%E5%90%8C%E6%99%82%E4%BA%88%E7%B4%84%E3%81%AE%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E6%B3%95%E4%BA%BA%E3%83%BB%E5%9B%A3%E4%BD%93%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%0D%0A%E2%96%A1%20%E3%81%9D%E3%81%AE%E4%BB%96%0D%0A%0D%0A%E2%97%86%E3%81%94%E8%B3%AA%E5%95%8F%E3%83%BB%E3%81%94%E8%A6%81%E6%9C%9B%E3%81%AE%E8%A9%B3%E7%B4%B0%0D%0A%0D%0A%0D%0A%E2%80%BB%E9%80%9A%E5%B8%B8%E3%81%AE%E3%81%94%E4%BA%88%E7%B4%84%E3%81%AF%E5%85%AC%E5%BC%8F%E4%BA%88%E7%B4%84%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E3%81%94%E5%88%A9%E7%94%A8%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0Ahttps%3A//reserve.489ban.net/client/kona-oc/0/plan/id/251674/stay%0D%0A%0D%0A%E3%81%A9%E3%81%86%E3%81%9E%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">メールで事前お問合せ</a>
     </div>
+    <p class="cta-reassure">
+      公式予約サイト（489ban）へ移動します<span class="sep">｜</span>クレジットカード決済対応<span class="sep">｜</span>1棟貸切・定員内は同料金<br>
+      <a href="#cancel">15日前まで無料キャンセル（キャンセル規定を見る）</a>
+    </p>
   </div>
 </section>
 
@@ -2270,6 +2312,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </p>
   <p>&copy; 2026 KONA OCEAN CLUB / SUGOMoRI Inc. All rights reserved.</p>
 </footer>
+
+<!-- ======== FUNNEL IMPROVEMENTS: styles ======== -->
+<style>
+/* hero CTA */
+.hero-cta-row{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.hero-cta{font-size:0.98rem;padding:15px 34px;}
+.hero-price-note{font-size:0.8rem;letter-spacing:0.06em;color:rgba(255,255,255,0.9);}
+
+/* quick decision strip */
+.quick-decision{background:var(--navy);color:#fff;padding:32px 20px;}
+.quick-inner{max-width:960px;margin:0 auto;}
+.quick-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;margin-bottom:20px;}
+.quick-chip{font-size:0.8rem;letter-spacing:0.03em;padding:7px 14px;border:1px solid rgba(200,149,108,0.5);border-radius:999px;color:var(--gold-light);white-space:nowrap;}
+.quick-summary{text-align:center;font-size:0.95rem;line-height:1.9;margin-bottom:22px;}
+.quick-summary strong{color:var(--gold-light);font-weight:600;font-size:1.25em;}
+.quick-cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}
+.quick-cta-row .btn{min-width:200px;}
+
+/* per-villa reserve CTA */
+.villa-cta-row{max-width:760px;margin:6px auto 0;padding:0 20px;display:flex;justify-content:center;}
+.villa-cta-row .btn{min-width:260px;}
+
+/* reassurance under main CTA */
+.cta-reassure{margin-top:24px;font-size:0.82rem;line-height:2;color:rgba(255,255,255,0.85);text-align:center;}
+.cta-reassure a{color:var(--gold-light);border-bottom:1px solid rgba(200,149,108,0.5);}
+.cta-reassure .sep{opacity:0.4;margin:0 7px;}
+
+/* sticky mobile reserve bar */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:900;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom));background:rgba(20,32,46,0.97);box-shadow:0 -4px 20px rgba(0,0,0,0.28);transform:translateY(120%);transition:transform 0.3s ease;}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta-info{display:flex;flex-direction:column;line-height:1.25;}
+.sticky-cta-price{color:var(--gold-light);font-weight:700;font-size:1.05rem;}
+.sticky-cta-label{color:rgba(255,255,255,0.72);font-size:0.72rem;letter-spacing:0.03em;}
+.sticky-cta-btn{flex-shrink:0;background:var(--gold);color:#fff;padding:13px 26px;border-radius:4px;font-weight:600;font-size:0.95rem;letter-spacing:0.05em;}
+@media(min-width:768px){.sticky-cta{display:none;}}
+</style>
+
+<!-- ======== STICKY MOBILE RESERVE BAR ======== -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-cta-info">
+    <span class="sticky-cta-price">¥70,400〜</span>
+    <span class="sticky-cta-label">全4棟・1棟貸切</span>
+  </div>
+  <a class="sticky-cta-btn" href="#cta" data-cta="scroll:sticky">空室・ご予約</a>
+</div>
 
 <!-- ======== JS ======== -->
 <script>
@@ -2364,6 +2451,76 @@ accordionItems.forEach(item => {
 
 // Room cards: play video on hover
 
+</script>
+
+<!-- ======== FUNNEL INSTRUMENTATION + STICKY BAR ======== -->
+<script>
+(function(){
+  window.dataLayer = window.dataLayer || [];
+  function track(event, params){
+    var payload = { event: event };
+    if (params) for (var k in params) payload[k] = params[k];
+    window.dataLayer.push(payload);
+  }
+
+  // --- クリック計測（イベント委譲）: data-cta="type:location" ---
+  var typeMap = { reserve:'reserve_click', contact:'contact_click', chef:'chef_click', scroll:'cta_scroll' };
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-cta]');
+    if (!el) return;
+    // 予約ボタンが未開放(pending)の時は計測しない
+    if (el.id === 'reserveBtn' && el.classList.contains('reserve-pending')) return;
+    var parts = (el.getAttribute('data-cta') || '').split(':');
+    var ev = typeMap[parts[0]];
+    if (!ev) return;
+    track(ev, { cta_location: parts[1] || '' });
+  });
+
+  // --- 表示計測: 予約エリア到達(reserve_view) / 棟閲覧(villa_view) ---
+  var seen = {};
+  if ('IntersectionObserver' in window){
+    var vObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var id = en.target.id || 'unknown';
+        if (!seen[id]){
+          seen[id] = 1;
+          if (id === 'cta') track('reserve_view');
+          else track('villa_view', { villa: id.replace('villa-','') });
+        }
+        vObs.unobserve(en.target);
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('#cta, .villa-showcase').forEach(function(el){ vObs.observe(el); });
+  }
+
+  // --- スクロール深度(25/50/75/100) ---
+  var marks = [25,50,75,100], fired = {};
+  window.addEventListener('scroll', function(){
+    var doc = document.documentElement;
+    var scrollable = (doc.scrollHeight - doc.clientHeight);
+    if (scrollable <= 0) return;
+    var pct = (doc.scrollTop / scrollable) * 100;
+    for (var i=0;i<marks.length;i++){
+      if (pct >= marks[i] && !fired[marks[i]]){ fired[marks[i]] = 1; track('scroll_depth', { percent: marks[i] }); }
+    }
+  }, { passive: true });
+
+  // --- スティッキー予約バー: heroを過ぎたら表示、#cta表示中は隠す ---
+  var bar = document.getElementById('stickyCta');
+  if (bar && 'IntersectionObserver' in window){
+    var cta = document.getElementById('cta');
+    var hero = document.querySelector('.hero');
+    var pastHero = false, ctaVisible = false;
+    function sync(){
+      var show = pastHero && !ctaVisible;
+      bar.classList.toggle('show', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }
+    if (hero) new IntersectionObserver(function(es){ pastHero = !es[0].isIntersecting; sync(); }, { threshold: 0 }).observe(hero);
+    if (cta)  new IntersectionObserver(function(es){ ctaVisible = es[0].isIntersecting; sync(); }, { threshold: 0.2 }).observe(cta);
+  }
+})();
 </script>
 
 </body>
