@@ -2180,6 +2180,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </dl>
     </div>
+
+    <!-- 設備・アメニティ -->
+    <div class="facility fade-in">
+      <h3 class="facility-heading">設備・アメニティ</h3>
+      <div class="facility-table-wrap">
+        <table class="facility-table">
+          <thead>
+            <tr><th>棟</th><th>最大定員</th><th>駐車場</th><th>ペット</th><th>プール</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>BEACH</th><td>6名</td><td>2台</td><td>可</td><td>あり</td></tr>
+            <tr><th>SUNSET</th><td>4名</td><td>1台</td><td>可</td><td>—</td></tr>
+            <tr><th>COVE</th><td>4名</td><td>1台</td><td>—</td><td>—</td></tr>
+            <tr><th>OCEAN</th><td>8名</td><td>3台</td><td>—</td><td>あり</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <dl class="facility-list">
+        <div class="facility-list-row">
+          <dt>室内設備</dt>
+          <dd>Wi-Fi／テレビ／エアコン／2口IHクッキングヒーター／2ドア冷凍冷蔵庫／電子レンジ／炊飯器／湯沸かし器／ドライヤー</dd>
+        </div>
+        <div class="facility-list-row">
+          <dt>キッチン備品</dt>
+          <dd><strong>食器</strong>：お皿／器／コーヒーカップ／グラス／スプーン／フォーク／割りばし<br><strong>調理器具</strong>：鍋／フライパン／まな板／包丁／ターナー／ピーラー／ハサミ／菜箸／栓抜き／アイスペール／ボウル</dd>
+        </div>
+        <div class="facility-list-row">
+          <dt>テラス設備</dt>
+          <dd>サウナ／ジャグジー／BBQ用ガスグリル（Weber&reg; Q3200 ガスグリル）</dd>
+        </div>
+        <div class="facility-list-row">
+          <dt>アメニティ</dt>
+          <dd>バスタオル／ハンドタオル／バスローブ／スリッパ／歯磨きセット／カミソリ／ブラシ／ボディタオル／ボディソープ／シャンプー／コンディショナー</dd>
+        </div>
+      </dl>
+      <p class="facility-note">※室内設備・キッチン備品・アメニティは全棟共通です。</p>
+    </div>
+
     <!-- キャンセルポリシー -->
     <div class="cancel-policy fade-in" id="cancel" style="margin:48px auto 0; max-width:760px; background:var(--sand); border:1px solid var(--sand-dark); padding:32px 28px;">
       <h3 style="font-family:'Noto Serif JP',serif; font-size:1.1rem; letter-spacing:0.08em; color:var(--navy); margin-bottom:14px; text-align:center;">キャンセルポリシー</h3>
@@ -2355,6 +2393,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 .sticky-cta-label{color:rgba(255,255,255,0.72);font-size:0.72rem;letter-spacing:0.03em;}
 .sticky-cta-btn{flex-shrink:0;background:var(--gold);color:#fff;padding:13px 26px;border-radius:4px;font-weight:600;font-size:0.95rem;letter-spacing:0.05em;}
 @media(min-width:768px){.sticky-cta{display:none;}}
+
+/* facility / amenities */
+.facility{max-width:900px;margin:52px auto 0;}
+.facility-heading{font-family:'Noto Serif JP',serif;font-size:1.15rem;letter-spacing:0.08em;color:var(--navy);text-align:center;margin-bottom:24px;}
+.facility-table-wrap{overflow-x:auto;margin-bottom:34px;}
+.facility-table{width:100%;border-collapse:collapse;font-size:0.9rem;min-width:440px;}
+.facility-table th,.facility-table td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--sand-dark);}
+.facility-table thead th{color:var(--gold);font-weight:600;letter-spacing:0.05em;border-bottom:2px solid var(--gold-light);}
+.facility-table tbody th{color:var(--navy);font-weight:600;font-family:'Montserrat',sans-serif;letter-spacing:0.05em;text-align:left;}
+.facility-table td{color:var(--text-light);}
+.facility-list{border-top:1px solid var(--sand-dark);}
+.facility-list-row{display:grid;grid-template-columns:150px 1fr;gap:8px 24px;padding:18px 4px;border-bottom:1px solid var(--sand-dark);}
+.facility-list-row dt{color:var(--navy);font-weight:600;font-size:0.92rem;}
+.facility-list-row dd{color:var(--text-light);font-size:0.9rem;line-height:1.9;}
+.facility-list-row dd strong{color:var(--navy);font-weight:600;}
+.facility-note{margin-top:16px;font-size:0.8rem;color:var(--text-light);text-align:center;}
+@media(max-width:600px){
+  .facility-list-row{grid-template-columns:1fr;gap:4px;}
+  .facility-list-row dt{color:var(--gold);}
+}
 </style>
 
 <!-- ======== STICKY MOBILE RESERVE BAR ======== -->
