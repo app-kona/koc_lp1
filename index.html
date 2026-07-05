@@ -2181,6 +2181,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </dl>
     </div>
 
+    <!-- 駐車場のご案内 -->
+    <div class="parking fade-in">
+      <h3 class="facility-heading">駐車場のご案内</h3>
+      <div class="parking-images">
+        <button type="button" class="parking-thumb" data-full="images/parkingguide1.jpg">
+          <img src="images/parkingguide1.jpg" alt="KONA OCEAN CLUB 駐車場ガイド（全景・各棟の駐車位置）" loading="lazy">
+        </button>
+        <button type="button" class="parking-thumb" data-full="images/parkingguide2.jpg">
+          <img src="images/parkingguide2.jpg" alt="KONA OCEAN CLUB 駐車場ガイド（詳細）" loading="lazy">
+        </button>
+      </div>
+      <p class="facility-note">画像をタップすると拡大表示します。</p>
+    </div>
+
     <!-- 設備・アメニティ -->
     <div class="facility fade-in">
       <h3 class="facility-heading">設備・アメニティ</h3>
@@ -2413,6 +2427,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .facility-list-row{grid-template-columns:1fr;gap:4px;}
   .facility-list-row dt{color:var(--gold);}
 }
+
+/* parking guide + lightbox */
+.parking{max-width:900px;margin:44px auto 0;}
+.parking-images{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px;}
+.parking-thumb{display:block;width:100%;padding:0;margin:0;border:1px solid var(--sand-dark);background:none;cursor:zoom-in;overflow:hidden;line-height:0;}
+.parking-thumb img{width:100%;height:auto;display:block;transition:transform .4s ease;}
+.parking-thumb:hover img{transform:scale(1.03);}
+.lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(10,16,24,0.93);padding:20px;}
+.lightbox.open{display:flex;}
+.lightbox-img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 44px rgba(0,0,0,.5);}
+.lightbox-close{position:absolute;top:12px;right:16px;width:46px;height:46px;font-size:2rem;line-height:1;color:#fff;background:none;border:none;cursor:pointer;}
 </style>
 
 <!-- ======== STICKY MOBILE RESERVE BAR ======== -->
@@ -2422,6 +2447,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="sticky-cta-label">全4棟・1棟貸切</span>
   </div>
   <a class="sticky-cta-btn" href="#cta" data-cta="scroll:sticky">空室・ご予約</a>
+</div>
+
+<!-- ======== LIGHTBOX（駐車場ガイド拡大） ======== -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="拡大画像">
+  <button type="button" class="lightbox-close" aria-label="閉じる">×</button>
+  <img class="lightbox-img" src="" alt="">
 </div>
 
 <!-- ======== JS ======== -->
@@ -2586,6 +2617,36 @@ accordionItems.forEach(item => {
     if (hero) new IntersectionObserver(function(es){ pastHero = !es[0].isIntersecting; sync(); }, { threshold: 0 }).observe(hero);
     if (cta)  new IntersectionObserver(function(es){ ctaVisible = es[0].isIntersecting; sync(); }, { threshold: 0.2 }).observe(cta);
   }
+})();
+</script>
+
+<!-- ======== LIGHTBOX（駐車場ガイド拡大） ======== -->
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  if (!lb) return;
+  var img = lb.querySelector('.lightbox-img');
+  function open(src, alt){
+    img.src = src; img.alt = alt || '';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
+    document.body.style.overflow = ''; img.src = '';
+  }
+  document.querySelectorAll('.parking-thumb').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var im = btn.querySelector('img');
+      open(btn.dataset.full, im ? im.alt : '');
+    });
+  });
+  lb.addEventListener('click', function(e){
+    if (e.target === lb || e.target.classList.contains('lightbox-close')) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && lb.classList.contains('open')) close();
+  });
 })();
 </script>
 
