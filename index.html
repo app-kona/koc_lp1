@@ -2184,15 +2184,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 駐車場のご案内 -->
     <div class="parking fade-in">
       <h3 class="facility-heading">駐車場のご案内</h3>
-      <div class="parking-images">
-        <button type="button" class="parking-thumb" data-full="images/parkingguide1.jpg">
+      <div class="zoom-grid">
+        <button type="button" class="zoom-thumb" data-full="images/parkingguide1.jpg">
           <img src="images/parkingguide1.jpg" alt="KONA OCEAN CLUB 駐車場ガイド（全景・各棟の駐車位置）" loading="lazy">
         </button>
-        <button type="button" class="parking-thumb" data-full="images/parkingguide2.jpg">
+        <button type="button" class="zoom-thumb" data-full="images/parkingguide2.jpg">
           <img src="images/parkingguide2.jpg" alt="KONA OCEAN CLUB 駐車場ガイド（詳細）" loading="lazy">
         </button>
       </div>
       <p class="facility-note">画像をタップすると拡大表示します。</p>
+    </div>
+
+    <!-- 間取り図 -->
+    <div class="floorplan fade-in">
+      <h3 class="facility-heading">間取り図</h3>
+      <div class="zoom-grid">
+        <button type="button" class="zoom-thumb" data-full="images/abc_heimen.jpg">
+          <img src="images/abc_heimen.jpg" alt="BEACH・SUNSET・COVE棟 間取り図（1F・2F）" loading="lazy">
+        </button>
+        <button type="button" class="zoom-thumb" data-full="images/d_heimen.jpg">
+          <img src="images/d_heimen.jpg" alt="OCEAN棟 間取り図（1F・2F）" loading="lazy">
+        </button>
+      </div>
+      <p class="facility-note">画像をタップすると拡大表示します。（上：BEACH・SUNSET・COVE／下：OCEAN）</p>
     </div>
 
     <!-- 設備・アメニティ -->
@@ -2428,12 +2442,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .facility-list-row dt{color:var(--gold);}
 }
 
-/* parking guide + lightbox */
-.parking{max-width:900px;margin:44px auto 0;}
-.parking-images{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px;}
-.parking-thumb{display:block;width:100%;padding:0;margin:0;border:1px solid var(--sand-dark);background:none;cursor:zoom-in;overflow:hidden;line-height:0;}
-.parking-thumb img{width:100%;height:auto;display:block;transition:transform .4s ease;}
-.parking-thumb:hover img{transform:scale(1.03);}
+/* parking guide / floor plan + lightbox */
+.parking,.floorplan{max-width:900px;margin:44px auto 0;}
+.zoom-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px;}
+.zoom-thumb{display:block;width:100%;padding:0;margin:0;border:1px solid var(--sand-dark);background:#fff;cursor:zoom-in;overflow:hidden;line-height:0;}
+.zoom-thumb img{width:100%;height:auto;display:block;transition:transform .4s ease;}
+.zoom-thumb:hover img{transform:scale(1.03);}
 .lightbox{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:rgba(10,16,24,0.93);padding:20px;}
 .lightbox.open{display:flex;}
 .lightbox-img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 44px rgba(0,0,0,.5);}
@@ -2635,7 +2649,7 @@ accordionItems.forEach(item => {
     lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
     document.body.style.overflow = ''; img.src = '';
   }
-  document.querySelectorAll('.parking-thumb').forEach(function(btn){
+  document.querySelectorAll('[data-full]').forEach(function(btn){
     btn.addEventListener('click', function(){
       var im = btn.querySelector('img');
       open(btn.dataset.full, im ? im.alt : '');
